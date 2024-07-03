@@ -54,6 +54,7 @@ header nav ul li a {
   font-size: 16px;
   padding: 10px 15px;
   display: block;
+  margin: 10px;
 }
 
 header nav ul li a:hover {
@@ -124,67 +125,7 @@ header nav ul li a:hover::after {
   right: 0;
 }
 
-/* Dropdown Styles */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #333;
-  min-width: 200px;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  left: 0;
-  top: 100%;
-}
-
-.dropdown-content a {
-  color: #fff;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {
-  background-color: #444;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* Submenu Styles */
-.dropdown-submenu {
-  position: relative;
-}
-
-.dropdown-submenu .dropdown-content {
-  top: 0;
-  left: 100%;
-  display: none; /* Ajouté pour masquer le sous-menu initialement */
-}
-
-.dropdown-submenu:hover .dropdown-content {
-  display: block; /* Affiche le sous-menu au survol */
-}
-
-header nav ul li a::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 2px;
-  display: block;
-  margin-top: 5px;
-  right: 0;
-  background: #fff;
-  transition: width 0.3s ease, right 0.3s ease;
-}
-
-header nav ul li a:hover::after {
-  width: 100%;
-  right: 0;
-}
 /* Carousel Styles */
-
-/* Navigation Buttons */
 .hero {
   height: 100vh;
   background: url("./pexels-pixabay-314726.jpg") no-repeat center center/cover;
@@ -738,7 +679,7 @@ header nav ul li a:hover::after {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s;
-  width: calc(33.333% - 20px); /* Three cards per row */
+  width: calc(33.333% - 20px); /* Trois cartes par ligne */
   margin-bottom: 20px;
 }
 
@@ -760,8 +701,9 @@ header nav ul li a:hover::after {
 }
 
 .product-card:hover {
-  transform: scale(1.05); /* Enlarge the card on hover */
+  transform: scale(1.05); /* Agrandir la carte au survol */
 }
+
 /* Contact Section */
 .contact {
   padding: 60px 0;
@@ -991,7 +933,7 @@ header nav ul li a:hover::after {
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  width: calc(50% - 20px); /* Two cards per row */
+  width: calc(50% - 20px); /* Deux cartes par ligne */
   margin-bottom: 20px;
   text-align: left;
 }
@@ -1005,6 +947,7 @@ header nav ul li a:hover::after {
   font-size: 18px;
   font-weight: bold;
 }
+
 footer {
   background-color: #333;
   color: #fff;
@@ -1134,44 +1077,49 @@ footer {
   cursor: pointer;
   transform: scale(1.1);
   background-color: #8c9eff;
-  box-shadow: 1px 1px 0px #bdc2e2, 2px 2px 0px #9ca6e0, 3px 3px 0px #9ca6e0,
-    4px 4px 0px #9ca6e0, 5px 5px 0px #9ca6e0;
+  box-shadow: 1px 1px 0px #a1a7fa, 2px 2px 0px #616df8, 3px 3px 0px #616df8,
+    4px 4px 0px #616df8, 5px 5px 0px #616df8;
 }
 
 .card4:hover .discord {
   fill: white;
 }
 
-.footer-bottom {
-  text-align: center;
-  padding: 10px 0;
-  background-color: #222;
-  color: #aaa;
-}
+@media screen and (max-width: 768px) {
+  /* Styles pour les petits écrans */
+  header {
+    padding: 10px;
+  }
 
-.footer-bottom p {
-  margin: 0;
-  font-size: 14px;
-}
-.section-background {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 60px 0;
-  color: #fff; /* Pour s'assurer que le texte est lisible */
-}
+  header .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-/* Image de fond pour la section About Us */
-#about-us {
-  /*background-image: url('./assets/image5.jpg');*/
-}
+  header h1 {
+    font-size: 28px;
+  }
 
-/* Image de fond pour la section Products */
-#products {
-  /*  background-image: url('./assets/image4.jpg');*/
-}
+  header nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
 
-/* Image de fond pour la section Contact */
-#contact {
-  /*background-image: url('./assets/image3.jpg');*/
+  .hero-content {
+    flex-direction: column;
+  }
+
+  .slides-container,
+  .descriptions {
+    width: 100%;
+  }
+
+  .products .product-card {
+    width: calc(50% - 10px); /* Deux cartes par ligne */
+  }
+
+  .testimonial-card {
+    width: 100%;
+  }
 }
